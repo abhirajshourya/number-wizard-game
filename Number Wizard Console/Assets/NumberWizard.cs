@@ -11,10 +11,15 @@ public class NumberWizard : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        StartGame();
+    }
+
+    void StartGame()
+    {
         Debug.Log("Welcome to Number Wizard Console.");
         Debug.Log("Pick a Number: ");
         Debug.Log("Range: " + min + "-" + max);
-        Debug.Log("Specify if your number is greater, lower or eual to "+guess);
+        Debug.Log("Specify if your number is greater, lower or eual to " + guess);
         Debug.Log("Push Up- Greater, Down- Lower or Enter- Equal");
         max=max+1;
     }
@@ -24,22 +29,26 @@ public class NumberWizard : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.UpArrow))
         {
-            Debug.Log("Your number greater or lower?");
+            
             min=guess;
-            guess = (min+max)/2;
-            Debug.Log(guess);
+            NextGuess();
+            
         }
         else if(Input.GetKeyDown(KeyCode.DownArrow))
         {
-            Debug.Log("Your number greater or lower?");
+            
             max=guess;
-            guess = (max+min)/2;
-            Debug.Log(guess);
+            NextGuess();
         }
         else if(Input.GetKeyDown(KeyCode.Return))
         {
-            Debug.Log("Oh! So that's your number!!");
-            Debug.Log(guess);
+            Debug.Log("Oh! So that's your number, "+guess+"!!");
         }
+    }
+
+    void NextGuess()
+    {
+        guess = (min+max)/2;
+        Debug.Log("Your number greater or lower than " + guess);
     }
 }
