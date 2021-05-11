@@ -24,21 +24,21 @@ public class NumberWizard : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.UpArrow))
         {
-            Debug.Log("Up Arrow Key was pressed.");
+            Debug.Log("Your number greater or lower?");
             min=guess;
             guess = (min+max)/2;
             Debug.Log(guess);
         }
         else if(Input.GetKeyDown(KeyCode.DownArrow))
         {
-            Debug.Log("Down Arrow Key was pressed.");
+            Debug.Log("Your number greater or lower?");
             max=guess;
             guess = (max+min)/2;
             Debug.Log(guess);
         }
         else if(Input.GetKeyDown(KeyCode.Return))
         {
-            Debug.Log("Enter Key was pressed.");
+            Debug.Log("Oh! So that's your number!!");
             Debug.Log(guess);
         }
     }
