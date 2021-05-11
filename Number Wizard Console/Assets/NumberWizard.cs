@@ -16,6 +16,9 @@ public class NumberWizard : MonoBehaviour
 
     void StartGame()
     {
+        max = 1000;
+        min = 1;
+        guess = 500;
         Debug.Log("Welcome to Number Wizard Console.");
         Debug.Log("Pick a Number: ");
         Debug.Log("Range: " + min + "-" + max);
@@ -43,6 +46,7 @@ public class NumberWizard : MonoBehaviour
         else if(Input.GetKeyDown(KeyCode.Return))
         {
             Debug.Log("Oh! So that's your number, "+guess+"!!");
+            StartGame();
         }
     }
 
