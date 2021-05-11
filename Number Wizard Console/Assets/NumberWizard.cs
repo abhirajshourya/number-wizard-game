@@ -25,6 +25,7 @@ public class NumberWizard : MonoBehaviour
         {
             Debug.Log("Up Arrow Key was pressed.");
             min=guess;
+            guess = (min+max)/2;
             Debug.Log(guess);
         }
         else if(Input.GetKeyDown(KeyCode.DownArrow))
